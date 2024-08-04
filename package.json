@@ -1,5 +1,5 @@
 {
-  "name": "nextjs_share_promts",
+  "name": "nextjs_promptopia",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,7 +9,11 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "next": "^15.0.0-rc.0",
+    "bcrypt": "^5.1.1",
+    "mongodb": "^6.8.0",
+    "mongoose": "^8.5.2",
+    "next": "^15.0.0-canary.101",
+    "next-auth": "^4.24.7",
     "react": "^19.0.0-rc-06d0b89e-20240801",
     "react-dom": "^19.0.0-rc-06d0b89e-20240801"
   },
