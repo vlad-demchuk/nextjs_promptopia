@@ -1,10 +1,8 @@
-'use client';
-
 import { useSession } from "next-auth/react";
 import { Prompt } from '@lib/definitions';
 import Image from 'next/image';
 import { useState } from 'react';
-import { usePathname, useRouter } from 'next/navigation';
+import { usePathname } from 'next/navigation';
 
 export default function PromptCard({
   post,
@@ -19,7 +17,6 @@ export default function PromptCard({
 }) {
   const { data: session } = useSession();
   const pathName = usePathname();
-  const router = useRouter();
 
   const [copied, setCopied] = useState('');
 
@@ -68,7 +65,7 @@ export default function PromptCard({
         {post.tag}
       </p>
 
-      {session?.user.id === post.creator._id && pathName === "/profile" && (
+      {session?.user?.id === post.creator._id && pathName === "/profile" && (
         <div className='mt-5 flex-center gap-4 border-t border-gray-100 pt-3'>
           <p
             className='font-inter text-sm green_gradient cursor-pointer'

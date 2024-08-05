@@ -1,5 +1,4 @@
 'use client';
-
 import { Prompt } from '@lib/definitions';
 import PromptCard from '@components/prompt-card';
 

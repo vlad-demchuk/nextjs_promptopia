@@ -1,4 +1,5 @@
-import { Post, Prompt } from '@lib/definitions';
+'use client';
+import { Prompt } from '@lib/definitions';
 import PromptCard from '@components/prompt-card';
 
 export default function Profile({

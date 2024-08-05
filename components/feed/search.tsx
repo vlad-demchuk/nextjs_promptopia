@@ -1,23 +1,22 @@
 'use client';
 
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
+import { ChangeEvent } from 'react';
 
 export default function Search() {
   const pathname = usePathname();
   const searchParams = useSearchParams();
   const { replace } = useRouter();
 
-  const handleSearchChange = (e) => {
+  const handleSearchChange = (e: ChangeEvent<HTMLInputElement>) => {
     const params = new URLSearchParams(searchParams);
-    const query = e.target.value;
+    const query = e?.target?.value || '';
 
     if (query) {
       params.set('query', query)
     } else {
       params.delete('query');
     }
-
-    console.log(params.toString());
 
     replace(`${pathname}/?${params.toString()}`);
   }

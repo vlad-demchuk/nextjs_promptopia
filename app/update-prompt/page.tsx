@@ -4,10 +4,8 @@ import { FormEvent, useEffect, useState } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import PromptForm from '@components/prompt-form';
 import { Post } from '@lib/definitions';
-import { useSession } from 'next-auth/react';
 
 export default function EditPromptPage() {
-  const { data: session } = useSession();
   const router = useRouter();
   const searchParams = useSearchParams();
   const promptId = searchParams.get('id');
@@ -59,7 +57,7 @@ export default function EditPromptPage() {
   };
 
   return (
-    <div>
+    <main>
       <PromptForm
         type="edit"
         post={post}
@@ -67,6 +65,6 @@ export default function EditPromptPage() {
         onSetPost={setPost}
         onHandleSubmit={updatePrompt}
       />
-    </div>
+    </main>
   );
 }

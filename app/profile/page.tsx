@@ -17,7 +17,7 @@ export default function ProfilePage() {
   };
 
   const handleDelete = async (post: Prompt) => {
-    const hasConfirmed = confirm("Are you sure you want to delete this prompt?");
+    const hasConfirmed = confirm('Are you sure you want to delete this prompt?');
 
     if (hasConfirmed) {
       try {
@@ -30,7 +30,6 @@ export default function ProfilePage() {
         console.error(e);
       }
     }
-
 
   };
 
@@ -47,12 +46,14 @@ export default function ProfilePage() {
   }, [session]);
 
   return (
-    <Profile
-      name="My"
-      desc="Welcome to your personalized profile page"
-      data={posts}
-      onEditClick={handleEdit}
-      onDeleteClick={handleDelete}
-    />
+    <main className="app">
+      <Profile
+        name="My"
+        desc="Welcome to your personalized profile page"
+        data={posts}
+        onEditClick={handleEdit}
+        onDeleteClick={handleDelete}
+      />
+    </main>
   );
 }

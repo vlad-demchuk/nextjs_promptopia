@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { FormEvent, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import PromptForm from '@components/prompt-form';
 import { Post } from '@lib/definitions';
@@ -16,7 +16,7 @@ export default function CreatePromptPage() {
     tag: '',
   });
 
-  const createPrompt = async (e) => {
+  const createPrompt = async (e: FormEvent) => {
     e.preventDefault();
     setSubmitting(true);
 
@@ -41,7 +41,7 @@ export default function CreatePromptPage() {
   };
 
   return (
-    <div>
+    <main className="app">
       <PromptForm
         type="create"
         post={post}
@@ -49,6 +49,6 @@ export default function CreatePromptPage() {
         onSetPost={setPost}
         onHandleSubmit={createPrompt}
       />
-    </div>
+    </main>
   );
 }

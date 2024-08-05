@@ -3,7 +3,7 @@ import PromptList from '@components/feed/prompt-list';
 
 export default async function Feed({ searchQuery }: { searchQuery: string }) {
   const response = await fetch('http://localhost:3000/api/prompt');
-  const posts = await response.json();
+  const posts = response.ok ? await response.json() : [];
 
   return (
     <section className="w-full">
@@ -11,7 +11,7 @@ export default async function Feed({ searchQuery }: { searchQuery: string }) {
 
       <PromptList
         posts={posts}
-        handleTagClick={async () => { 'use server'}}
+        handleTagClick={async () => {'use server'}}
       />
     </section>
   );

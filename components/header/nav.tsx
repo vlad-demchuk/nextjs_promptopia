@@ -49,13 +49,15 @@ export default function Nav() {
                 href="/profile"
                 className="relative flex size-8"
               >
-                <Image
-                  src={session?.user?.image}
-                  alt="User Image"
-                  width='40'
-                  height='40'
-                  className="object-contain"
-                />
+                {session?.user?.image &&
+                  <Image
+                    src={session.user.image}
+                    alt="User Image"
+                    width="40"
+                    height="40"
+                    className="object-contain"
+                  />
+                }
               </Link>
             </li>
           </>

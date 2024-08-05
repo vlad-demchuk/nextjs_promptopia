@@ -1,6 +1,5 @@
-import NextAuth, { AuthOptions } from 'next-auth';
+import NextAuth, { AuthOptions, Session, User as NextAuthUser } from 'next-auth';
 import GoogleProvider from 'next-auth/providers/google';
-
 import User from '@schema/user';
 import { connectToDB } from '@lib/database';
 
@@ -22,7 +21,7 @@ const handler = NextAuth({
       return session;
     },
 
-    async signIn({ profile }) {
+    async signIn({ profile }: any) {
       try {
         await connectToDB();
 
@@ -48,7 +47,6 @@ const handler = NextAuth({
       }
     },
   }
-
 }) satisfies AuthOptions;
 
 export { handler as GET, handler as POST };
