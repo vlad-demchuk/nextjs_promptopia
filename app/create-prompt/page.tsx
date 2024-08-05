@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import PromptForm from '@components/create-prompt/prompt-form';
+import PromptForm from '@components/prompt-form';
 import { Post } from '@lib/definitions';
 import { useSession } from 'next-auth/react';
 
@@ -18,7 +18,6 @@ export default function CreatePromptPage() {
 
   const createPrompt = async (e) => {
     e.preventDefault();
-    console.log('!!! post:', post);
     setSubmitting(true);
 
     try {
@@ -35,7 +34,7 @@ export default function CreatePromptPage() {
         router.push('/');
       }
     } catch (e) {
-      console.log(e);
+      console.error(e);
     } finally {
       setSubmitting(false);
     }

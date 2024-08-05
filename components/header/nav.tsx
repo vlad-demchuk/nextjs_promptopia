@@ -6,9 +6,7 @@ import { BuiltInProviderType } from '@node_modules/next-auth/providers';
 import Image from 'next/image';
 
 export default function Nav() {
-  const isUserLoggedIn = true;
   const { data: session } = useSession();
-  console.log('!!! session:', session);
   const [providers, setProviders] = useState<Record<
     LiteralUnion<BuiltInProviderType, string>,
     ClientSafeProvider

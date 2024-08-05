@@ -9,7 +9,7 @@ export default function PromptForm({
   onSetPost,
   onHandleSubmit,
 }: {
-  type: 'create' | 'update',
+  type: 'create' | 'edit',
   post: Post,
   submitting: boolean,
   onSetPost: Dispatch<Post>,
